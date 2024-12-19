@@ -1,7 +1,8 @@
 type Match = {
-    id: number,
+    id?: number,
     giverId: number,
-    receiverId: number
+    receiverId: number,
+    groupId: number,
 }
 
 export default Match

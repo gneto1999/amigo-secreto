@@ -1,6 +1,7 @@
 import conn from "../conection";
 import { DataTypes } from "sequelize";
 import Participant from "./Participant";
+import Match from "./Match";
 
 const Group = conn.define('tb_group', {
     id: {
@@ -18,5 +19,8 @@ const Group = conn.define('tb_group', {
 
 Group.hasMany(Participant, { foreignKey: 'groupId' })
 Participant.belongsTo(Group, { foreignKey: 'groupId' })
+
+Group.hasMany(Match, { foreignKey: 'groupId'})
+Match.belongsTo(Group, { foreignKey: 'groupId' })
 
 export default Group

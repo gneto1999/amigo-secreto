@@ -2,7 +2,7 @@ import groupRepository from "../repository/groupRepository"
 import Group from "../types/groupType"
 
 async function createGroup(group: Group) {
-    groupRepository.create(group)
+    return groupRepository.create(group)
 }
 
 async function getGroupById(id: number) {

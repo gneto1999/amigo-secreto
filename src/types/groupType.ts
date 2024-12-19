@@ -1,5 +1,5 @@
 type Group = {
-    id: number,
+    id?: number,
     name: number,
 }
 

@@ -2,7 +2,7 @@ import Participant from "../models/Participant"
 import ParticipantType from "../types/participantType"
 
 async function create(participant: ParticipantType) {
-    Participant.create(participant)
+    return Participant.create(participant)
 }
 
 async function findById(id: number) {
@@ -10,7 +10,14 @@ async function findById(id: number) {
 }
 
 async function findByGroupId(groupId: number) {
-    return Participant.findAll({ where: { groupId } })
+    const participants = await Participant.findAll({ where: { groupId } })
+    return participants.map(participant => {
+        return {
+            id: participant.getDataValue('id'),
+            name: participant.getDataValue('name'),
+            groupId: participant.getDataValue('groupId')
+        }
+    })
 }
 
 export default {

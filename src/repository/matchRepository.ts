@@ -2,7 +2,7 @@ import Match from "../models/Match";
 import MatchType from "../types/matchType";
 
 async function bulkCreate(matches: MatchType[]) {
-    Match.bulkCreate(matches)
+    return Match.bulkCreate(matches)
 }
 
 async function findByGiverId(giverId: number) {

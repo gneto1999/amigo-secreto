@@ -1,7 +1,7 @@
 type Participant = {
-    id: number,
+    id?: number,
     name: string,
-    idGroup: number
+    idGroup?: number
 }
 
 export default Participant
